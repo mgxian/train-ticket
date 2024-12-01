@@ -1,10 +1,8 @@
-FROM node
+FROM harbor.mcdchina.net/devops/node:18
 
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
-RUN mkdir -p /app
 WORKDIR /app
-
 ADD ./node_modules /app/node_modules
 ADD ./package.json /app/
 ADD ./public /app/public

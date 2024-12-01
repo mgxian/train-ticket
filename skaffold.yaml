@@ -1,0 +1,109 @@
+apiVersion: skaffold/v3
+kind: Config
+metadata:
+  name: app
+build:
+  platforms: ["linux/amd64"]
+  artifacts:
+  - image: ts-admin-basic-info-service
+    context: ts-admin-basic-info-service
+  - image: ts-avatar-service
+    context: ts-avatar-service
+  - image: ts-contacts-service
+    context: ts-contacts-service
+  - image: ts-news-service
+    context: ts-news-service
+  - image: ts-price-service
+    context: ts-price-service
+  - image: ts-station-service
+    context: ts-station-service
+  - image: ts-ui-dashboard
+    context: ts-ui-dashboard
+  - image: ts-admin-order-service
+    context: ts-admin-order-service
+  - image: ts-basic-service
+    context: ts-basic-service
+  - image: ts-delivery-service
+    context: ts-delivery-service
+  - image: ts-notification-service
+    context: ts-notification-service
+  - image: ts-rebook-service
+    context: ts-rebook-service
+  - image: ts-ticket-office-service
+    context: ts-ticket-office-service
+  - image: ts-user-service
+    context: ts-user-service
+  - image: ts-admin-route-service
+    context: ts-admin-route-service
+  - image: ts-cancel-service
+    context: ts-cancel-service
+  - image: ts-execute-service
+    context: ts-execute-service
+  - image: ts-order-other-service
+    context: ts-order-other-service
+  - image: ts-route-plan-service
+    context: ts-route-plan-service
+  - image: ts-train-food-service
+    context: ts-train-food-service
+  - image: ts-verification-code-service
+    context: ts-verification-code-service
+  - image: ts-admin-travel-service
+    context: ts-admin-travel-service
+  - image: ts-food-delivery-service
+    context: ts-food-delivery-service
+  - image: ts-order-service
+    context: ts-order-service
+  - image: ts-route-service
+    context: ts-route-service
+  - image: ts-train-service
+    context: ts-train-service
+  - image: ts-voucher-service
+    context: ts-voucher-service
+  - image: ts-admin-user-service
+    context: ts-admin-user-service
+  - image: ts-config-service
+    context: ts-config-service
+  - image: ts-food-service
+    context: ts-food-service
+  - image: ts-payment-service
+    context: ts-payment-service
+  - image: ts-seat-service
+    context: ts-seat-service
+  - image: ts-travel-plan-service
+    context: ts-travel-plan-service
+  - image: ts-wait-order-service
+    context: ts-wait-order-service
+  - image: ts-assurance-service
+    context: ts-assurance-service
+  - image: ts-consign-price-service
+    context: ts-consign-price-service
+  - image: ts-gateway-service
+    context: ts-gateway-service
+  - image: ts-inside-payment-service
+    context: ts-inside-payment-service
+  - image: ts-preserve-other-service
+    context: ts-preserve-other-service
+  - image: ts-security-service
+    context: ts-security-service
+  - image: ts-station-food-service
+    context: ts-station-food-service
+  - image: ts-travel-service
+    context: ts-travel-service
+  - image: ts-travel2-service
+    context: ts-travel2-service
+  - image: ts-auth-service
+    context: ts-auth-service
+  - image: ts-consign-service
+    context: ts-consign-service
+  - image: ts-preserve-service
+    context: ts-preserve-service
+  tagPolicy:
+    gitCommit: {}
+  local:
+    useBuildkit: false
+manifests:
+  kustomize:
+    paths:
+    - deployment/kubernetes-manifests/k8s-with-istio
+deploy:
+  kubectl: {}

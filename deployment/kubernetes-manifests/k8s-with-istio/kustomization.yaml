@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+ - ts-deployment-part1.yml
+ - ts-deployment-part2.yml
+ - ts-deployment-part3.yml
+ - trainticket-gateway.yaml
