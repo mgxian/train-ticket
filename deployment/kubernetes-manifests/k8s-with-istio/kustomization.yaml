@@ -5,3 +5,11 @@ resources:
  - ts-deployment-part2.yml
  - ts-deployment-part3.yml
  - trainticket-gateway.yaml
+
+patches:
+- target:
+    kind: Deployment
+  patch: |-
+    - op: add
+      path: /spec/template/spec/imagePullSecrets
+      value: [{ name: harborreg }]
